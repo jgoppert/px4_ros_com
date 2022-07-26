@@ -17,7 +17,7 @@ include(EnableSanitizers)
 # Required since
 #   - "create_subscription()" and "create_publisher()" APIs changed
 #   - eigen3_cmake_module is only available in these distros
-list(APPEND ROS_DISTROS "dashing" "eloquent" "foxy" "galactic" "rolling")
+list(APPEND ROS_DISTROS "dashing" "eloquent" "foxy" "galactic" "rolling" "humble")
 set(ROS_DISTRO)
 if(DEFINED ENV{ROS2_DISTRO})
   set(ROS_DISTRO $ENV{ROS2_DISTRO})
@@ -85,7 +85,7 @@ target_include_directories(frame_transforms PUBLIC
   $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
   ${Eigen3_INCLUDE_DIRS}
 )
-target_link_libraries(frame_transforms Eigen3::Eigen ${geometry_msgs_LIBRARIES} ${sensor_msgs_LIBRARIES})
+target_link_libraries(frame_transforms Eigen3::Eigen)
 
 # Add microRTPS agent
 add_executable(micrortps_agent ${MICRORTPS_AGENT_FILES})

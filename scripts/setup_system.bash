@@ -40,6 +40,9 @@ if [ -z $ros1_distro ] && [ -z $ros2_distro ]; then
     ROS1_DISTRO="noetic"
     ROS2_DISTRO="foxy"
     ;;
+  "jammie")
+    ROS2_DISTRO="humble"
+    ;;
   *)
     echo "Unsupported version of Ubuntu detected."
     exit 1
